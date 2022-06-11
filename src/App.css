@@ -1,38 +1,140 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.notShow {
+  display: none;
+}
+.btn2,
+.modelBtn {
+  padding: 20px 55px;
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: #333;
+  background-color: transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  border-radius: 35px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+}
+.modelBtn:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 100%;
+  background: #333;
+  transition: inherit;
+  -webkit-transition: inherit;
+  border-radius: 25px;
+  z-index: -1;
+}
+.modelBtn:hover:after {
+  width: 100%;
+  left: 0;
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+  transition: width 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+  -webkit-transition: width 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+}
+.modelBtn:hover {
+  color: #fff;
+}
+.showModel {
+  position: absolute;
+  width: 400px;
+  height: 430px;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  padding: 0 8px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  padding: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.modelContainer {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.showOverlay {
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  background: #0b0b0b;
+  opacity: 0.8;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h3 {
+  color: #333;
+  padding: 40px 10px;
+  letter-spacing: normal;
+  font-weight: 700;
+  font-size: 23px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+p {
+  font-family: "Raleway", sans-serif;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0.03em;
+  margin-bottom: 20px;
+  color: #666;
 }
-
-.App-link {
-  color: #61dafb;
+input {
+  width: 100%;
+  clear: both;
+  height: 50px;
+  padding: 10px 15px;
+  margin-bottom: 25px;
+  border: none;
+  box-shadow: 0px 4px 25px rgb(0 0 0 / 30%);
+  background: #ffffff;
+  border-radius: 4px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.btn2 {
+  background-color: #0b0b0b;
+  color: #fff;
+  text-transform: capitalize;
+}
+.closeModelBtn {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.closeModelBtn:hover {
+  background-color: #0b0b0b;
+  color: #fff;
 }
